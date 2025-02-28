@@ -1,0 +1,17 @@
+<div
+  class="category_card border rounded-lg overflow-hidden hover:shadow-3xl duration-500"
+  (click)="deferFlag()"
+>
+  <div class="image_category">
+    <img
+      [src]="oneCategory.image"
+      [alt]="'image ' + oneCategory.name"
+      class="w-[100%] h-[320px] object-cover"
+    />
+  </div>
+  <div
+    class="body_category p-5 text-center text-green-700 font-semibold text-3xl"
+  >
+    <h2>{{ oneCategory.name }}</h2>
+  </div>
+</div>

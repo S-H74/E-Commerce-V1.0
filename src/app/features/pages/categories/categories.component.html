@@ -1,0 +1,21 @@
+<h2 class="text-center text-green-600 my-8 text-5xl font-semibold">
+  All Brands
+</h2>
+<div
+  class="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xl:gap-6 xl:my-4 xl:px-20 hover:xl:border-green-600"
+>
+  @for (category of _allCategories; track $index) {
+  <app-category-card
+    [oneCategory]="category"
+    (_categoryID)="_categoryID = $event"
+    (flag)="flag = $event"
+    (_categoryName)="_categoryName_ = $event"
+  ></app-category-card>
+  }
+</div>
+@defer(when flag){
+<app-suc-categories-of-category
+  [subCategoriesOfCategory]="_categoryID"
+  [NameOfCategoryForCategories]="_categoryName_"
+></app-suc-categories-of-category>
+}

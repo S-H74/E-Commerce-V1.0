@@ -1,0 +1,10 @@
+<h2 class="text-center text-green-600 my-8 text-5xl font-semibold">
+  All Brands
+</h2>
+<div
+  class="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 xl:gap-8 xl:my-16 xl:px-20 hover:xl:border-green-600"
+>
+  @for (brand of _brnads; track $index) {
+  <app-brand-card [_brandCardInput]="brand"></app-brand-card>
+  }
+</div>

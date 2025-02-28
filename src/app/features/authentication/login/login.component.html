@@ -1,0 +1,154 @@
+<div class="w-9/12 mx-auto my-7">
+  <form action="" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <!----------------- Message-rror form------------ -->
+    @if (API_Message.length > 0) {
+    <div
+      class="flex items-center p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 mt-3"
+      role="alert"
+    >
+      <svg
+        class="shrink-0 inline w-4 h-4 me-3"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+        />
+      </svg>
+      <span class="sr-only">Info</span>
+      <div class="text-xl">
+        <span class="font-medium">{{ API_Message }}</span>
+      </div>
+    </div>
+    }
+    <!-- -------------------- user-Eamil ---------------------- -->
+    <div class="mb-6">
+      <label
+        for="password"
+        class="block mb-2 text-xl font-medium text-green-900"
+        >Email:
+      </label>
+      <input
+        formControlName="email"
+        type="email"
+        id="email"
+        class="bg-gray-50 border border-gray-300 text-green-900 text-xl rounded-lg block w-full p-2.5"
+      />
+      @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+      @if(loginForm.get('email')?.getError('required')) {
+      <div
+        class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 mt-3"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="text-xl">
+          <span class="font-medium">Danger alert!</span> Email is required
+        </div>
+      </div>
+      } @else if (loginForm.get('email')?.getError('email')) {
+      <div
+        class="flex items-center p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 mt-3"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="text-xl">
+          <span class="font-medium">Warning alert!</span> Please enter a Vaild
+          eamil
+        </div>
+      </div>
+      } }
+    </div>
+    <!-- --------------------- Paswword ---------------------- -->
+    <div class="mb-6">
+      <label
+        for="password"
+        class="block mb-2 text-xl font-medium text-green-900"
+        >password:
+      </label>
+      <input
+        formControlName="password"
+        type="text"
+        id="password"
+        class="bg-gray-50 border border-gray-300 text-green-900 text-xl rounded-lg block w-full p-2.5"
+      />
+      @if (loginForm.get('email')?.errors && loginForm.get('password')?.touched)
+      { @if(loginForm.get('password')?.getError('required')) {
+      <div
+        class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 mt-3"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="text-xl">
+          <span class="font-medium">Danger alert!</span> Password is required
+        </div>
+      </div>
+      } @else if (loginForm.get('password')?.getError('pattern')) {
+      <div
+        class="flex items-center p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 mt-3"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="text-xl">
+          <span class="font-medium">Warning alert!</span> Password must start
+          with at least 1 character Capital and 3 - 9 characters
+        </div>
+      </div>
+      } }
+    </div>
+    <button
+      type="submit"
+      [disabled]="!loginForm.valid"
+      class="text-white bg-green-600 font-medium rounded-lg text-2xl px-5 py-2.5 text-center me-2 mb-2 disabled:bg-green-400"
+    >
+      Login @if (Loading) {
+      <i class="fa-solid fa-spinner fa-spin"></i>
+      }
+    </button>
+  </form>
+</div>

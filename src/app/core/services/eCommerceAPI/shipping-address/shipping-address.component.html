@@ -1,0 +1,43 @@
+<div class="w-9/12 mx-auto my-7">
+  <form action="" [formGroup]="shippingAddress" (ngSubmit)="checkout_order()">
+    <div class="mb-6">
+      <label for="details" class="block mb-2 text-xl font-medium text-green-900"
+        >Details:</label
+      >
+      <input
+        formControlName="details"
+        type="text"
+        id="details"
+        class="bg-gray-50 border border-gray-300 text-green-900 text-xl rounded-lg block w-full p-2.5"
+      />
+    </div>
+    <div class="mb-6">
+      <label for="phone" class="block mb-2 text-xl font-medium text-green-900"
+        >Phone:</label
+      >
+      <input
+        formControlName="phone"
+        type="text"
+        id="phone"
+        class="bg-gray-50 border border-gray-300 text-green-900 text-xl rounded-lg block w-full p-2.5"
+      />
+    </div>
+    <div class="mb-6">
+      <label for="city" class="block mb-2 text-xl font-medium text-green-900"
+        >City:</label
+      >
+      <input
+        formControlName="city"
+        type="text"
+        id="city"
+        class="bg-gray-50 border border-gray-300 text-green-900 text-xl rounded-lg block w-full p-2.5"
+      />
+    </div>
+    <button
+      type="submit"
+      class="text-white bg-green-600 font-medium rounded-lg text-2xl px-5 py-2.5 text-center me-2 mb-2 disabled:bg-green-400"
+    >
+      Checkout
+    </button>
+  </form>
+</div>

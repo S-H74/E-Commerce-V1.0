@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+.btn-green {
+  @apply text-white bg-green-600 font-medium rounded-lg text-2xl px-5 py-2.5 text-center me-2 mb-2;
+}
+.card-shadow {
+  @apply hover:border-green-600 hover:shadow-3xl transition ease-in-out duration-500;
+}

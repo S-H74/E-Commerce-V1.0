@@ -1,0 +1,63 @@
+<!-- If product_Information is undefined while waiting for the API response, the template might crash when trying to access imageCover.
+  so we use if conditon
+-->
+@if (product_Information) {
+<div class="w-9/12 my-5 mx-auto">
+  <a
+    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row hover:bg-gray-100"
+  >
+    <img
+      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+      [src]="product_Information.imageCover"
+      [alt]="product_Information.title"
+    />
+    <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+        {{ product_Information.description }}
+      </h5>
+      <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-400">
+        {{ product_Information.description }}
+      </h5>
+      <p class="mb-3 font-normal text-gray-700">
+        Here are the biggest enterprise technology acquisitions of 2021 so far,
+        in reverse chronological order.
+      </p>
+
+      <span class="text-green-500">{{
+        product_Information.category.name
+      }}</span>
+
+      <div class="flex items-center justify-between">
+        <span class="font-light text-xl text-gray-400"
+          >{{ product_Information.price }} EGP
+        </span>
+        <div class="flex items-center mt-2.5 mb-5">
+          <div class="flex items-center space-x-1 rtl:space-x-reverse">
+            <svg
+              class="w-4 h-4 text-yellow-300"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+              />
+            </svg>
+          </div>
+          <span class="font-light text-xl text-gray-400 py-0.5 rounded-sm">{{
+            product_Information.ratingsAverage
+          }}</span>
+        </div>
+      </div>
+
+      <button
+        class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+      >
+        Add to cart
+      </button>
+    </div>
+  </a>
+</div>
+
+}

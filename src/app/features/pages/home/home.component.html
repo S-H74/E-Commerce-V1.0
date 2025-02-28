@@ -1,0 +1,14 @@
+<app-sliderhome [productImages]="allProducts"></app-sliderhome>
+<input
+  type="text"
+  [(ngModel)]="userWord"
+  class="bg-gray-50 border border-gray-300 text-green-900 text-xl rounded-lg block w-2/5 mx-auto my-4 p-2.5"
+  placeholder="product Title...."
+/>
+<div
+  class="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 xl:gap-7 xl:my-10 xl:px-20"
+>
+  @for (product of allProducts |search : userWord; track $index) {
+  <app-product-card [productCard]="product"></app-product-card>
+  }
+</div>

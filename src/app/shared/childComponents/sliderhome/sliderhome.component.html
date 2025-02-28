@@ -1,0 +1,12 @@
+<owl-carousel-o [options]="customOptions">
+  @for (product of productImages; track $index) {
+  <ng-template carouselSlide [id]="product._id">
+    <img
+      [src]="product.imageCover"
+      [alt]="product.slug"
+      [title]="product.title"
+    />
+  </ng-template>
+
+  }
+</owl-carousel-o>
